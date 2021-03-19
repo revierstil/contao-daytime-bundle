@@ -1,0 +1,4 @@
+<div class="<?= $this->class ?>">
+    <div class="timespan"><?= $this->timespan ?>:</div>
+    <div class="content"><?= $this->content ?>:</div>
+</div>

@@ -1,0 +1,18 @@
+# Listeners for the Daytime-Bundle
+services:
+    _defaults:
+        public: true
+
+    Jdwiese\DaytimeBundle\EventListener\Schema\SchemaListener:
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: "doctrine.event_listener", event: "postGenerateSchemaTable" }
+
+    Jdwiese\DaytimeBundle\EventListener\DataContainer\HelperListener:
+        class: Jdwiese\DaytimeBundle\EventListener\DataContainer\HelperListener
+
+    Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener:
+        class: Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener
+        arguments:
+            - '@Jdwiese\DaytimeBundle\Repository\TextRepository'

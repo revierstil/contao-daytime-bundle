@@ -27,5 +27,5 @@ class JdwieseDaytimeExtension extends Extension
         );
 
         $loader->load('services.yml');
-    }
+        $loader->load('listener.yml');    }
 }

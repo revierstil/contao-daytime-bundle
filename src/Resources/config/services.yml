@@ -1,3 +1,11 @@
 services:
     _defaults:
         autoconfigure: true
+
+    Jdwiese\DaytimeBundle\Repository\CategoryRepository:
+        arguments:
+            - '@doctrine'
+
+    Jdwiese\DaytimeBundle\Repository\TextRepository:
+        arguments:
+            - '@doctrine'
