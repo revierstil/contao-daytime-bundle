@@ -110,7 +110,7 @@ class Text
         return $this->published;
     }
 
-    public function getTimespanAsString()
+    public function getTimespanAsString(): string
     {
         if ($this->start and $this->stop) {
             return sprintf('von %s Uhr bis %s Uhr', $this->start->format('H:i'), $this->stop->format('H:i'));
@@ -123,5 +123,34 @@ class Text
         }
 
         return 'wenn kein anderer Text angezeigt wird';
+    }
+
+    public function isDefault(): bool
+    {
+        return !$this->start and !$this->stop;
+    }
+
+    public function isNow(): bool
+    {
+        $now = new DateTime();
+        $time = $now->format('H:i');
+
+        if ($this->start and $this->stop) {
+            $start = $this->start->format('H:i');
+            $stop = $this->stop->format('H:i');
+            return $time >= $start and $time < $stop;
+        }
+
+        elseif ($this->start) {
+            $start = $this->start->format('H:i');
+            return $time >= $start;
+        }
+
+        elseif ($this->stop) {
+            $stop = $this->stop->format('H:i');
+            return $time < $stop;
+        }
+
+        return false;
     }
 }

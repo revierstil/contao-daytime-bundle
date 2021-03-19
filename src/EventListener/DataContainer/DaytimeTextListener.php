@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Jdwiese\DaytimeBundle\EventListener\DataContainer;
 
 use Contao\BackendTemplate;

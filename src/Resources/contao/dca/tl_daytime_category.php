@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener;
 use Netzmacht\Contao\Toolkit\Dca\Listener\Save\GenerateAliasListener;
 
 $GLOBALS['TL_DCA']['tl_daytime_category'] = [
@@ -23,9 +24,10 @@ $GLOBALS['TL_DCA']['tl_daytime_category'] = [
             'disableGrouping' => true,
         ],
         'label' => [
-            'fields' => ['title', 'alias'],
+            'fields' => ['title', 'alias', 'insert_tag'],
             'format' => '%s',
             'showColumns' => true,
+            'label_callback' => [DaytimeCategoryListener::class, 'addInsertTag'],
         ],
         'global_operations' => [
             'all' => [

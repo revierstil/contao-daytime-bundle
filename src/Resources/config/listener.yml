@@ -12,7 +12,15 @@ services:
     Jdwiese\DaytimeBundle\EventListener\DataContainer\HelperListener:
         class: Jdwiese\DaytimeBundle\EventListener\DataContainer\HelperListener
 
+    Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener:
+        class: Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener
+
     Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener:
         class: Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener
         arguments:
             - '@Jdwiese\DaytimeBundle\Repository\TextRepository'
+
+    Jdwiese\DaytimeBundle\EventListener\ReplaceInsertTagsListener:
+        class: Jdwiese\DaytimeBundle\EventListener\ReplaceInsertTagsListener
+        arguments:
+            - '@Jdwiese\DaytimeBundle\Repository\CategoryRepository'

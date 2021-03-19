@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jdwiese\DaytimeBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -47,12 +48,14 @@ class Category
      * @var Category[]|Collection
      *
      * @ORM\OneToMany(targetEntity="Text", mappedBy="parent")
+     * @ORM\OrderBy({"start" = "ASC", "stop" = "ASC"})
      */
     private $texts;
 
     public function __construct()
     {
         $this->tstamp = time();
+        $this->texts = new ArrayCollection();
     }
 
     public function getId(): int
@@ -75,4 +78,35 @@ class Category
         return $this->alias;
     }
 
+    /**
+     * @return Collection|Category[]
+     */
+    public function getTexts(): Collection
+    {
+        return $this->texts;
+    }
+
+    public function getDefaultText(): ?Text
+    {
+        return $this->getTexts()->filter(function(Text $text) {
+            return $text->isPublished() and $text->isDefault();
+        })->first() ?: null;
+    }
+
+    public function getMatchingTexts()
+    {
+        return $this->getTexts()->filter(function(Text $text) {
+            return $text->isPublished() and $text->isNow();
+        });
+    }
+
+    public function getCurrentText(): ?Text
+    {
+        $texts = $this->getMatchingTexts();
+        if (!$texts->isEmpty()) {
+            return $texts->last();
+        }
+
+        return $this->getDefaultText();
+    }
 }

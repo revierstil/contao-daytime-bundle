@@ -20,4 +20,17 @@ final class CategoryRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Category::class);
     }
+
+    public function findOneByIdOrAlias(string $idOrAlias): ?Category
+    {
+        $queryBuilder = $this->createQueryBuilder('category');
+
+        $queryBuilder
+            ->where($queryBuilder->expr()->eq(ctype_digit($idOrAlias) ? 'category.id' : 'category.alias', ':id_or_alias'))
+            ->setParameter('id_or_alias', $idOrAlias);
+
+        return $queryBuilder
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }
