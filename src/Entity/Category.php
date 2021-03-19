@@ -95,8 +95,27 @@ class Category
 
     public function getMatchingTexts()
     {
-        return $this->getTexts()->filter(function(Text $text) {
-            return $text->isPublished() and $text->isNow();
+        $texts = $this->getTexts()->filter(function(Text $text) {
+            return $text->isPublished() and !$text->isDefault();
+        });
+
+        /** @var Text $text */
+        foreach ($texts as $offset => $text) {
+            if ($texts->offsetExists($offset + 1)) {
+                /** @var Text $nextText */
+                $nextText = $texts->offsetGet($offset + 1);
+
+                if (!$text->getStop() and $nextText->getStart()) {
+                    $text->setStop($nextText->getStart());
+                }
+                elseif ($text->getStop() and !$nextText->getStart()) {
+                    $nextText->setStart($text->getStop());
+                }
+            }
+        }
+
+        return $texts->filter(function(Text $text) {
+            return $text->isNow();
         });
     }
 

@@ -95,9 +95,21 @@ class Text
         return $this->start;
     }
 
+    public function setStart(DateTime $start): Text
+    {
+        $this->start = $start;
+        return $this;
+    }
+
     public function getStop(): ?DateTime
     {
         return $this->stop;
+    }
+
+    public function setStop(DateTime $stop): Text
+    {
+        $this->stop = $stop;
+        return $this;
     }
 
     public function getContent(): string
