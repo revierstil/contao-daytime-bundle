@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\Repository;
+namespace Revierstil\DaytimeBundle\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Jdwiese\DaytimeBundle\Entity\Text;
+use Revierstil\DaytimeBundle\Entity\Text;
 
 /**
  * @method Text|null find($id, $lockMode = null, $lockVersion = null)

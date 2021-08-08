@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\EventListener;
+namespace Revierstil\DaytimeBundle\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Jdwiese\DaytimeBundle\Repository\CategoryRepository;
+use Revierstil\DaytimeBundle\Repository\CategoryRepository;
 
 /**
  * @Hook("replaceInsertTags")

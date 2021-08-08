@@ -2,10 +2,10 @@ services:
     _defaults:
         autoconfigure: true
 
-    Jdwiese\DaytimeBundle\Repository\CategoryRepository:
+    Revierstil\DaytimeBundle\Repository\CategoryRepository:
         arguments:
             - '@doctrine'
 
-    Jdwiese\DaytimeBundle\Repository\TextRepository:
+    Revierstil\DaytimeBundle\Repository\TextRepository:
         arguments:
             - '@doctrine'

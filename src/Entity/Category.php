@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\Entity;
+namespace Revierstil\DaytimeBundle\Entity;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Jdwiese\DaytimeBundle\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="Revierstil\DaytimeBundle\Repository\CategoryRepository")
  * @ORM\Table(name="tl_daytime_category")
  */
 class Category

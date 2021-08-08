@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\Entity;
+namespace Revierstil\DaytimeBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Jdwiese\DaytimeBundle\Repository\TextRepository")
+ * @ORM\Entity(repositoryClass="Revierstil\DaytimeBundle\Repository\TextRepository")
  * @ORM\Table(name="tl_daytime_text")
  */
 class Text

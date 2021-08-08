@@ -1,12 +1,12 @@
 {
-    "name": "jdwiese/contao-daytime-bundle",
+    "name": "revierstil/contao-daytime-bundle",
     "type": "contao-bundle",
     "description": "Contao 4 daytime bundle",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Jan-Dirk Wiese",
-            "email": "mail@jdwiese.de"
+            "email": "jdw@revierstil.de"
         }
     ],
     "require": {
@@ -28,21 +28,20 @@
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
     "extra": {
-        "contao-manager-plugin": "Jdwiese\\DaytimeBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Revierstil\\DaytimeBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "Jdwiese\\DaytimeBundle\\": "src/"
+            "Revierstil\\DaytimeBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jdwiese\\DaytimeBundle\\Tests\\": "tests/"
         }
     },
     "support": {
-        "issues": "https://github.com/jdwiese/contao-daytime-bundle/issues",
-        "source": "https://github.com/jdwiese/contao-daytime-bundle"
+        "issues": "https://github.com/revierstil/contao-daytime-bundle/issues",
+        "source": "https://github.com/revierstil/contao-daytime-bundle"
     },
     "scripts": {
         "cs-fixer": [

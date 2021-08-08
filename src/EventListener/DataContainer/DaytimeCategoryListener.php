@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\EventListener\DataContainer;
+namespace Revierstil\DaytimeBundle\EventListener\DataContainer;
 
 use Contao\DataContainer;
-use Jdwiese\DaytimeBundle\EventListener\ReplaceInsertTagsListener;
+use Revierstil\DaytimeBundle\EventListener\ReplaceInsertTagsListener;
 
 class DaytimeCategoryListener
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\EventListener\Schema;
+namespace Revierstil\DaytimeBundle\EventListener\Schema;
 
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 use Doctrine\DBAL\Schema\Table;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Event\GenerateSchemaTableEventArgs;
-use Jdwiese\DaytimeBundle\Entity\Text;
+use Revierstil\DaytimeBundle\Entity\Text;
 
 final class SchemaListener
 {

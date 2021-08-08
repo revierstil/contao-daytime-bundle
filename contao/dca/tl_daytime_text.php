@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener;
-use Jdwiese\DaytimeBundle\EventListener\DataContainer\HelperListener;
+use Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener;
+use Revierstil\DaytimeBundle\EventListener\DataContainer\HelperListener;
 
 $GLOBALS['TL_DCA']['tl_daytime_text'] = [
 

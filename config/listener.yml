@@ -1,0 +1,26 @@
+# Listeners for the Daytime-Bundle
+services:
+    _defaults:
+        public: true
+
+    Revierstil\DaytimeBundle\EventListener\Schema\SchemaListener:
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: "doctrine.event_listener", event: "postGenerateSchemaTable" }
+
+    Revierstil\DaytimeBundle\EventListener\DataContainer\HelperListener:
+        class: Revierstil\DaytimeBundle\EventListener\DataContainer\HelperListener
+
+    Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener:
+        class: Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener
+
+    Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener:
+        class: Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeTextListener
+        arguments:
+            - '@Revierstil\DaytimeBundle\Repository\TextRepository'
+
+    Revierstil\DaytimeBundle\EventListener\ReplaceInsertTagsListener:
+        class: Revierstil\DaytimeBundle\EventListener\ReplaceInsertTagsListener
+        arguments:
+            - '@Revierstil\DaytimeBundle\Repository\CategoryRepository'

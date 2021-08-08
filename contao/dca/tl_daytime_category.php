@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Jdwiese\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener;
+use Revierstil\DaytimeBundle\EventListener\DataContainer\DaytimeCategoryListener;
 use Netzmacht\Contao\Toolkit\Dca\Listener\Save\GenerateAliasListener;
 
 $GLOBALS['TL_DCA']['tl_daytime_category'] = [

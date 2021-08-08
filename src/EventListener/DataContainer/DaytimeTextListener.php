@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jdwiese\DaytimeBundle\EventListener\DataContainer;
+namespace Revierstil\DaytimeBundle\EventListener\DataContainer;
 
 use Contao\BackendTemplate;
-use Jdwiese\DaytimeBundle\Repository\TextRepository;
+use Revierstil\DaytimeBundle\Repository\TextRepository;
 
 class DaytimeTextListener
 {
